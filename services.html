@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zero Barriers Services - Comprehensive revenue growth solutions through human transformation, technology enablement, and revenue acceleration.">
+    <title>Services | Zero Barriers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #25c536;
+            --primary-dark: #1ea82c;
+            --primary-light: rgba(37, 197, 54, 0.1);
+            --secondary: #58595b;
+            --black: #000000;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+            --accent: #2c88d9;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--primary);
+            margin-left: 5px;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            position: relative;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .cta-button {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(37, 197, 54, 0.3);
+        }
+        
+        /* Services Hero */
+        .services-hero {
+            background: linear-gradient(135deg, var(--white) 0%, #f9f9f9 100%);
+            padding: 160px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: rgba(37, 197, 54, 0.05);
+            z-index: 1;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title h1 {
+            font-size: 42px;
+            color: var(--black);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+        }
+        
+        .section-title h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .section-title p {
+            color: var(--secondary);
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        /* Service Detail */
+        .service-detail {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .service-detail:nth-child(odd) {
+            background-color: var(--white);
+        }
+        
+        .service-detail:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+        
+        .service-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .service-detail:nth-child(even) .service-container {
+            direction: rtl;
+        }
+        
+        .service-detail:nth-child(even) .service-content {
+            direction: ltr;
+        }
+        
+        .service-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .service-image {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--black);
+            position: relative;
+        }
+        
+        .service-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .service-description {
+            font-weight: 300;
+            margin-top: 20px;
+        }
+        
+        .service-features {
+            margin-top: 20px;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            font-weight: 300;
+        }
+        
+        .benefits-list li strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+        
+        .benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        /* Partnerships */
+        .partnerships {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--white) 0%, #f9f9f9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .partnerships::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(37, 197, 54, 0.05);
+            z-index: 1;
+        }
+        
+        .partnerships-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .partner-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .partner-logo {
+            height: 100px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .partner-logo i {
+            font-size: 48px;
+            color: var(--primary);
+        }
+        
+        .partner-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 15px;
+        }
+        
+        .partner-description {
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+        
+        .white-cta {
+            background-color: var(--white);
+            color: var(--primary);
+            padding: 15px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+            font-size: 17px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .white-cta:hover {
+            background-color: var(--light-gray);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .secondary-white-cta {
+            color: var(--white);
+            font-weight: 500;
+            margin-top: 20px;
+            display: inline-block;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 2px;
+            transition: var(--transition);
+        }
+        
+        .secondary-white-cta:hover {
+            border-color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+            margin-left: 5px;
+        }
+        
+        .footer-logo-icon {
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .footer-description {
+            color: #aaa;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+        }
+        
+        .footer-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            transition: var(--transition);
+            font-weight: 300;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .contact-info {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #aaa;
+        }
+        
+        .contact-info-icon {
+            width: 16px;
+            display: flex;
+            justify-content: center;
+            color: var(--primary);
+        }
+        
+        .contact-info p {
+            font-weight: 300;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        
+        /* Mobile menu */
+        .mobile-menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .service-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .service-detail:nth-child(even) .service-container {
+                direction: ltr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--white);
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                z-index: 100;
+                gap: 15px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .section-title h1 {
+                font-size: 32px;
+            }
+            
+            .service-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">ZB</div>
+                ZERO <span>BARRIERS</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <a href="contact.html" class="cta-button">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="section-title">
+                <h1>Our Services</h1>
+                <p>Comprehensive solutions designed to eliminate barriers and engineer breakthrough growth</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Human Transformation -->
+    <section class="service-detail" id="human">
+        <div class="container service-container">
+            <div class="service-content">
+                <h2 class="service-title">Human Transformation</h2>
+                <p class="service-description">Our human transformation services help individuals and teams unlock their full potential through purpose-driven methodologies and proprietary frameworks. We believe that lasting success starts with people who understand their purpose and are equipped with the right mindset and skills.</p>
+                <div class="service-features">
+                    <ul class="benefits-list">
+                        <li><strong>The Attitude Cycle™</strong> - Our proprietary methodology for creating mindset shifts that lead to lasting behavioral change</li>
+                        <li><strong>IMPROV Sales Methodology™</strong> - A customer-centric approach to sales that emphasizes authenticity and adaptability</li>
+                        <li><strong>Purpose-Driven Exercise™</strong> - A structured process for identifying individual and team purpose</li>
+                        <li><strong>Leadership Development</strong> - Programs designed to build confident, effective leaders at all levels</li>
+                        <li><strong>Team Alignment</strong> - Workshops and tools to align teams around shared goals and values</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-image" style="background-image: url('/api/placeholder/600/400');">
+                <!-- Placeholder for human transformation image -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Enablement -->
+    <section class="service-detail" id="technology">
+        <div class="container service-container">
+            <div class="service-content">
+                <h2 class="service-title">Technology Enablement</h2>
+                <p class="service-description">Through our strategic partnerships, we implement the right technology solutions to streamline operations, enhance customer experiences, and drive efficiency. Our technology enablement services are designed to support your growth objectives and eliminate technical barriers.</p>
+                <div class="service-features">
+                    <ul class="benefits-list">
+                        <li><strong>Custom Software Development</strong> - Tailored applications designed to address your specific business challenges</li>
+                        <li><strong>Salesforce Implementation</strong> - Expert configuration and customization of the world's leading CRM platform</li>
+                        <li><strong>System Integration</strong> - Seamless connection of disparate systems to create unified workflows</li>
+                        <li><strong>Workflow Automation</strong> - Identification and automation of repetitive tasks to increase efficiency</li>
+                        <li><strong>Digital Presence Enhancement</strong> - Website development, SEO, and digital marketing solutions</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-image" style="background-image: url('/api/placeholder/600/400');">
+                <!-- Placeholder for technology enablement image -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenue Acceleration -->
+    <section class="service-detail" id="revenue">
+        <div class="container service-container">
+            <div class="service-content">
+                <h2 class="service-title">Revenue Acceleration</h2>
+                <p class="service-description">By combining people, process, and technology, we create systems that generate predictable, sustainable revenue growth. Our revenue acceleration services focus on eliminating bottlenecks and optimizing your entire revenue generation process.</p>
+                <div class="service-features">
+                    <ul class="benefits-list">
+                        <li><strong>Sales Process Optimization</strong> - Design and implementation of efficient, effective sales processes</li>
+                        <li><strong>KPI-Driven Performance Management</strong> - Establishment of meaningful metrics and management systems</li>
+                        <li><strong>Continuous Improvement Cycles</strong> - Implementation of feedback loops to drive ongoing enhancement</li>
+                        <li><strong>Revenue Operations (RevOps)</strong> - Alignment of sales, marketing, and customer success functions</li>
+                        <li><strong>Compensation Design</strong> - Creation of incentive structures that drive desired behaviors and outcomes</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-image" style="background-image: url('/api/placeholder/600/400');">
+                <!-- Placeholder for revenue acceleration image -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Consulting -->
+    <section class="service-detail" id="consulting">
+        <div class="container service-container">
+            <div class="service-content">
+                <h2 class="service-title">Strategic Consulting</h2>
+                <p class="service-description">Our strategic consulting services provide expert guidance on critical business challenges and opportunities. We work with executive teams to identify growth obstacles, develop strategic plans, and implement solutions that drive sustainable results.</p>
+                <div class="service-features">
+                    <ul class="benefits-list">
+                        <li><strong>Growth Strategy Development</strong> - Creation of clear, actionable plans to achieve revenue targets</li>
+                        <li><strong>Organizational Design</strong> - Structuring teams and roles for optimal performance</li>
+                        <li><strong>Market Expansion</strong> - Identification and evaluation of new market opportunities</li>
+                        <li><strong>Merger & Acquisition Support</strong> - Due diligence and integration planning</li>
+                        <li><strong>Executive Coaching</strong> - One-on-one support for leaders driving transformation</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-image" style="background-image: url('/api/placeholder/600/400');">
+                <!-- Placeholder for strategic consulting image -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Training -->
+    <section class="service-detail" id="training">
+        <div class="container service-container">
+            <div class="service-content">
+                <h2 class="service-title">Team Training</h2>
+                <p class="service-description">Our training programs equip your teams with the skills, knowledge, and mindset needed to excel in their roles. From sales professionals to customer service representatives, we provide custom training solutions designed to drive immediate performance improvements.</p>
+                <div class="service-features">
+                    <ul class="benefits-list">
+                        <li><strong>Sales Training</strong> - Comprehensive programs to develop consultative selling skills</li>
+                        <li><strong>Leadership Development</strong> - Practical workshops for new and experienced leaders</li>
+                        <li><strong>Customer Service Excellence</strong> - Training focused on creating exceptional experiences</li>
+                        <li><strong>Process Adoption</strong> - Sessions designed to drive compliance with new systems and processes</li>
+                        <li><strong>Role-Based Certifications</strong> - Structured programs to validate skills and knowledge</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-image" style="background-image: url('/api/placeholder/600/400');">
+                <!-- Placeholder for team training image -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships -->
+    <section class="partnerships" id="partnerships">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Strategic Partnerships</h2>
+                <p>Zero Barriers collaborates with industry leaders to deliver comprehensive solutions</p>
+            </div>
+            <div class="partnerships-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="partner-name">DevPipeline</h3>
+                    <p class="partner-description">Custom software development and technical talent solutions to drive digital transformation and eliminate technology barriers.</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="partner-name">SalesforceConsultants.io</h3>
+                    <p class="partner-description">Expert Salesforce implementation and customization services to optimize your CRM and streamline operations.</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="partner-name">Growth Accelerators</h3>
+                    <p class="partner-description">Specialized revenue acceleration tools and methodologies to drive predictable, sustainable growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Eliminate Your Growth Barriers?</h2>
+                <p>Schedule a no-obligation transformation assessment with our team to identify your barriers to growth and explore how our integrated approach can help you achieve rapid, substantial, and sustainable results.</p>
+                <a href="contact.html" class="white-cta">Schedule Your Assessment</a>
+                <div>
+                    <a href="case-studies.html" class="secondary-white-cta">Explore Our Case Studies <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">ZB</div>
+                        ZERO <span>BARRIERS</span>
+                    </div>
+                    <p class="footer-description">Potential Unleashed: Transforming people and organizations through rapid, substantial, and sustainable growth.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#human">Human Transformation</a></li>
+                        <li><a href="services.html#technology">Technology Enablement</a></li>
+                        <li><a href="services.html#revenue">Revenue Acceleration</a></li>
+                        <li><a href="services.html#consulting">Strategic Consulting</a></li>
+                        <li><a href="services.html#training">Team Training</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Contact Us</h3>
+                <div class="contact-info">
+                  <div class="contact-info-icon">📍</div>
+                  <p>1234 Growth Avenue<br />Innovation City, Utah 84058</p>
+                </div>
+                <div class="contact-info">
+                  <div class="contact-info-icon">📞</div>
+                  <p>+1 (801) 555-0123</p>
+                </div>
+                <div class="contact-info">
+                  <div class="contact-info-icon">✉️</div>
+                  <p>growth@zerobarriers.com</p>
+                </div>
+              </div>
+            </div>
+            <div class="copyright">
+              <p>&copy; 2025 Zero Barriers. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+
+        <script>
+          // Simple scroll functionality
+          document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+              e.preventDefault();
+              document.querySelector(this.getAttribute("href")).scrollIntoView({
+                behavior: "smooth",
+              });
+            });
+          });
+        </script>
+      </body>
+    </html>
+  </head>
+</html>
